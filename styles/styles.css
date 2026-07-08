@@ -55,8 +55,20 @@ h1, h2, h3, h4, h5, h6 {
 
 :root {
     --radius-md: 0.5rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
     --space-sm: 0.5rem;
     --space-md: 1rem;
+
+    /* typescale */
+    --disclaimer: 0.833rem;
+    --paragraph: 1rem;
+    --heading-h2: 2.074rem;
+    --heading-h1: 2.986rem;
+    --heading-h3: 2.074rem;
+    --heading-h4: 1.728rem;
+    --heading-h5: 1.44rem;
+    --heading-h6: 1.2rem;
 }
 
 main {
@@ -67,11 +79,14 @@ main {
     padding: var(--space-sm);
 }
 
-
 .form-wrapper, .list-wrapper  {
-    background-color: darkcyan;
+    background-color: lightblue;
     border-radius: var(--radius-md);
     padding: var(--space-sm);
+}
+
+.list-wrapper {
+    background-color: transparent;
 }
 
 .form-wrapper form label {
@@ -82,4 +97,83 @@ main {
 .form-wrapper form button {
     margin-top: var(--space-sm);
     width: 100%;
+}
+
+/* BOOK CARD STYLING */
+
+.book-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border: 1px solid lightgray;
+    border-radius: var(--radius-md);
+    padding: var(--space-md);
+}
+
+.book__heading span {
+    font-style: italic;
+    font-weight: 400;
+}
+
+.book__heading p {
+    font-size: var(--paragraph);
+}
+
+.book__actions {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.book__actions span {
+    font-size: var(--disclaimer);
+}
+
+/* SWITCH TOGGLE BUTTON */
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: var(--radius-xl);
+}
+
+.slider::before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #4CAF50;
+}
+
+input:checked + .slider::before {
+  transform: translateX(26px);
 }
