@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My library</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+<body>
+    <main>
+        <aside class="form-wrapper">
+            <h2>Add new book</h2>
+
+            <form action="">
+                <label for="book-title">
+                    What is the book title?
+                    <input type="text" name="book-title" id="book-title">
+                </label>
+                <label for="book-author">
+                    Who is(are) the author(s)
+                    <input type="text" name="book-author" id="book-author">
+                </label>
+                <button type="submit">Add book</button>
+            </form>
+
+        </aside>
+        <section class="list-wrapper">
+            <h2>List of books</h2>
+            <div class="listing">
+                <article class="book-card">
+                    <div class="book__heading">
+                        <p> <strong>Book title</strong> by <span>author</span></p>
+                    </div>
+                    <div class="book__content">
+                        <!-- No info -->
+                    </div>
+                    <div class="book__actions">
+                        <button type="button">Mark read</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

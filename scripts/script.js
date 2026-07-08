@@ -2,7 +2,7 @@ const myLibrary = [];
 
 function Book() {
     // constructor
-    // id, author, title, number of pages, read
+    // id, author, title, read
 }
 
 function addBookToLibrary() {
