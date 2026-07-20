@@ -1,49 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My library</title>
     <link rel="stylesheet" href="./styles/styles.css">
 </head>
+
 <body>
     <main>
+        <section class="list-wrapper">
+            <h2>List of books</h2>
+            <div class="listing" id="list-container">
+            </div>
+        </section>
         <aside class="form-wrapper">
             <h2>Add new book</h2>
-
-            <form action="">
+            <form id="add-book">
                 <label for="book-title">
                     What is the book title?
-                    <input type="text" name="book-title" id="book-title">
+                    <input type="text" name="book-title" id="book-title" placeholder="Enter book title">
                 </label>
                 <label for="book-author">
                     Who is(are) the author(s)
-                    <input type="text" name="book-author" id="book-author">
+                    <input type="text" name="book-author" id="book-author" placeholder="Enter author's name">
                 </label>
                 <button type="submit">Add book</button>
             </form>
-
         </aside>
-        <section class="list-wrapper">
-            <h2>List of books</h2>
-            <div class="listing">
-                <article class="book-card">
-                    <div class="book__heading">
-                        <p> <strong>Book title</strong> by <span>Author</span></p>
-                    </div>
-                    <div class="book__content">
-                        <!-- No info -->
-                    </div>
-                    <div class="book__actions">
-                        <span>Mark as read</span>
-                        <label class="switch">
-                            <input type="checkbox">
-                            <span class="slider"></span>
-                        </label>
-                    </div>
-                </article>
-            </div>
-        </section>
     </main>
+    <script src="./scripts/script.js"></script>
 </body>
+
 </html>

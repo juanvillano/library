@@ -1,5 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Bevan:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 /* 1. Use a more-intuitive box-sizing model */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -23,18 +28,31 @@ body {
 }
 
 /* 6. Improve media defaults */
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
 
 /* 7. Inherit fonts for form controls */
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 
 /* 8. Avoid text overflows */
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   overflow-wrap: break-word;
 }
 
@@ -42,138 +60,255 @@ p, h1, h2, h3, h4, h5, h6 {
 p {
   text-wrap: pretty;
 }
-h1, h2, h3, h4, h5, h6 {
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   text-wrap: balance;
 }
 
 /*
   10. Create a root stacking context
 */
-#root, #__next {
+#root,
+#__next {
   isolation: isolate;
 }
 
-:root {
-    --radius-md: 0.5rem;
-    --radius-lg: 1rem;
-    --radius-xl: 1.5rem;
-    --space-sm: 0.5rem;
-    --space-md: 1rem;
+.bevan-regular {
+  font-family: "Bevan", serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
-    /* typescale */
-    --disclaimer: 0.833rem;
-    --paragraph: 1rem;
-    --heading-h2: 2.074rem;
-    --heading-h1: 2.986rem;
-    --heading-h3: 2.074rem;
-    --heading-h4: 1.728rem;
-    --heading-h5: 1.44rem;
-    --heading-h6: 1.2rem;
+.bevan-regular-italic {
+  font-family: "Bevan", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+:root {
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+
+  /* typescale */
+  --disclaimer: 0.833rem;
+  --paragraph: 1rem;
+  --heading-h2: 2.074rem;
+  --heading-h1: 2.986rem;
+  --heading-h3: 2.074rem;
+  --heading-h4: 1.728rem;
+  --heading-h5: 1.44rem;
+  --heading-h6: 1.2rem;
 }
 
 main {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-template-rows: auto;
-    gap: var(--space-md);
-    padding: var(--space-sm);
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: auto;
+  gap: var(--space-md);
+  padding: var(--space-sm);
 }
 
-.form-wrapper, .list-wrapper  {
-    background-color: lightblue;
-    border-radius: var(--radius-md);
-    padding: var(--space-sm);
+.form-wrapper,
+.list-wrapper {
+  background-color: lightblue;
+  border-radius: var(--radius-md);
+  padding: var(--space-sm);
+
+  h2 {
+    font-family: "Bevan", serif;
+    font-weight: 600;
+    font-style: normal;
+    padding-bottom: var(--space-sm);
+  }
 }
 
 .list-wrapper {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 .form-wrapper form label {
-    display: inline-block;
-    margin-bottom: var(--space-sm);
+  display: inline-block;
+  margin-bottom: var(--space-sm);
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: var(--paragraph);
 }
 
 .form-wrapper form button {
-    margin-top: var(--space-sm);
-    width: 100%;
+  margin-top: var(--space-sm);
+  width: 100%;
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: var(--paragraph);
+  padding: var(--space-sm);
+  border-radius: var(--radius-md);
+  border: 1px solid #02408D;
+  background-color: #005FCF;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #02408D;
+  }
 }
 
 /* BOOK CARD STYLING */
 
+.listing {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
 .book-card {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    border: 1px solid lightgray;
-    border-radius: var(--radius-md);
-    padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border: 1px solid lightgray;
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  align-items: center;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  font-synthesis: none;
+  gap: var(--space-md);
+  justify-content: space-between;
+  height: fit-content;
+  padding: var(--space-md);
+  max-width: 336px;
+}
+
+.book__heading {
+  display: flex;
+  align-self: stretch;
+  box-sizing: border-box;
+  flex-direction: column;
+  font-synthesis: none;
+  gap: var(--space-sm);
 }
 
 .book__heading span {
-    font-style: italic;
-    font-weight: 400;
+  font-style: italic;
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .book__heading p {
-    font-size: var(--paragraph);
+  font-size: var(--paragraph);
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.book__heading p:first-child {
+  font-size: var(--heading-h5);
+  font-weight: 900;
 }
 
 .book__actions {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    gap: var(--space-sm);
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: var(--space-sm);
+  align-self: stretch;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  font-synthesis: none;
+  height: 41px;
+  justify-content: space-between;
+}
+
+.book__actions div:first-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-sm);
 }
 
 .book__actions span {
-    font-size: var(--disclaimer);
+  font-size: var(--disclaimer);
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
 /* SWITCH TOGGLE BUTTON */
 
 .switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
 }
 
 .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
 .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: 0.4s;
-    border-radius: var(--radius-xl);
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: var(--radius-xl);
 }
 
 .slider::before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    transition: 0.4s;
-    border-radius: 50%;
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
 }
 
-input:checked + .slider {
+input:checked+.slider {
   background-color: #4CAF50;
 }
 
-input:checked + .slider::before {
+input:checked+.slider::before {
   transform: translateX(26px);
+}
+
+.erase-btn {
+  display: flex;
+  align-items: center;
+  background-color: #E04033;
+  border-radius: calc(infinity * 1px);
+  box-sizing: border-box;
+  justify-content: center;
+  padding: var(--space-sm);
+  border: none;
+
+  &:hover {
+    background-color: #BB352A;
+  }
 }
